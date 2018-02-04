@@ -26,6 +26,7 @@ public class VaadinUI extends UI {
         contentArea.addComponent(new Button("Click me", e -> Notification.show("Hello Spring+Vaadin user!")));
 
         Grid<PlayersEntity> grid = new Grid<>(PlayersEntity.class);
+        grid.setColumnOrder("name", "mail", "firstname", "lastname");
         grid.setItems(players.findAll());
 
         contentArea.addComponent(grid);
